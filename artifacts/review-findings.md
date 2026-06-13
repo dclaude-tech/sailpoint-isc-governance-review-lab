@@ -29,13 +29,15 @@ The findings are written in a public-safe format. They do not include screenshot
 
 ## GOV-002: Mover changes should trigger access review
 
-| Field                | Details                                                                                        |
-| -------------------- | ---------------------------------------------------------------------------------------------- |
-| Review area          | Lifecycle governance                                                                           |
-| Observation          | A department or job change should prompt review of previously assigned access.                 |
-| Why it matters       | Movers may retain access from a prior role if access is not reviewed.                          |
-| Public-safe evidence | Fictional mover scenario changed from Operations to Finance while retaining prior team access. |
-| Suggested action     | Compare old access against the new department, job title, and expected role access.            |
+| Field                | Details                                                                                                                                                                                                   |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Review area          | Lifecycle governance                                                                                                                                                                                      |
+| Observation          | A department or job change should trigger a review of previously assigned access.                                                                                                                         |
+| Why it matters       | Movers may keep access from a prior role if access is not reviewed after their business context changes.                                                                                                  |
+| Public-safe evidence | Fictional mover scenario changed from Operations to Finance while retaining prior team access.                                                                                                            |
+| Review question      | Does the retained access still match the identity's new department, job title, manager context, and business need?                                                                                        |
+| Suggested action     | Compare old access against the new department, job title, lifecycle state, and expected role access. Keep access only when there is a clear business reason. Remove or review access that no longer fits. |
+| Related artifact     | [`artifacts/mover-review-case-study.md`](mover-review-case-study.md)                                                                                                                                      |
 
 ## GOV-003: Requestable access needs clear business descriptions
 
