@@ -10,10 +10,10 @@ The goal is to show analyst thinking around SailPoint ISC governance concepts wi
 
 | Review area        | Analyst question                                                            |
 | ------------------ | --------------------------------------------------------------------------- |
-| Identity profiles  | Is identity data being shaped into useful governance context?               |
+| Identity profiles  | Is identity data shaped into useful governance context?                     |
 | Attribute mappings | Are key attributes available for lifecycle, access, and review decisions?   |
 | Human identities   | Can a reviewer understand who the identity is and why access may be needed? |
-| Lifecycle states   | Does the identity status support joiner, mover, and leaver decisions?       |
+| Lifecycle states   | Does identity status support joiner, mover, and leaver decisions?           |
 | Entitlements       | Are low-level permissions understandable and tied to business access?       |
 | Access profiles    | Is access grouped in a way that supports requests and reviews?              |
 | Roles              | Do roles reflect expected access for a job, team, or department?            |
@@ -64,6 +64,28 @@ Lifecycle states help connect identity status to access decisions.
 | Leaver          | Is access removed when the identity should no longer be active? |
 
 The main risk is stale access. A mover or leaver process can leave access behind if lifecycle context is unclear or not reviewed.
+
+## Example mover review
+
+A mover review checks whether access still matches the identity's updated business context after a department or job change.
+
+For the fictional Northstar Identity Lab scenario, the analyst question was:
+
+> Does the identity still have access from the prior department that should be reviewed, removed, or reapproved?
+
+| Review point           | Analyst check                                                |
+| ---------------------- | ------------------------------------------------------------ |
+| Department change      | Compare previous department to current department            |
+| Job title change       | Confirm whether assigned access still supports the new role  |
+| Manager context        | Confirm who can validate current business need               |
+| Assigned access        | Identify access that may belong to the previous role         |
+| Role membership        | Check whether role-based access still matches the identity   |
+| Access profile context | Confirm the business purpose and owner of requestable access |
+| Review outcome         | Keep, remove, or investigate access based on business need   |
+
+The goal is not to assume all old access is wrong. The goal is to identify access that needs review because the identity's business context changed.
+
+Related artifact: [Mover review case study](../artifacts/mover-review-case-study.md)
 
 ## Access model review
 
@@ -124,10 +146,7 @@ The review focus is not on capturing tenant output. The focus is on showing how 
 
 This review shows how IAM governance concepts connect:
 
-Source identity data supports identity profiles.
-
-Identity profiles support lifecycle states and governed identities.
-
-Governed identities connect to access profiles, roles, requests, certifications, Search, and Identity Graph context.
-
-The analyst goal is to find where access is clear, where it is risky, and where documentation needs to be improved.
+* Source identity data supports identity profiles.
+* Identity profiles support lifecycle states and governed identities.
+* Governed identities connect to access profiles, roles, requests, certifications, Search, and Identity Graph context.
+* The analyst goal is to find where access is clear, where it is risky, and where documentation needs to be improved.
